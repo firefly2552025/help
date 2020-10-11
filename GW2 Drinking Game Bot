@@ -1,0 +1,17 @@
+require('dotenv').config();
+const discord = require('discord.js');
+const { findSourceMap } = require('module');
+const client = new discord.Client();
+
+client.login(process.env.BOT_TOKEN);
+
+client.on('message', async message => 
+{
+    if (message.author.bot) return;
+    if (message.content.toLowerCase() === '~drink')
+    var messages = ["Take a shot if your mount dies",
+    "Take a shot if you have less than 500 gold",
+    "Take a shot if you have done a dungeon today",
+    "Take a shot if you died in a t4 dungeon...again"];
+var randomMessage = messages[Math.floor(Math.random() * messages.length)];
+console.log(randomMessage)})
